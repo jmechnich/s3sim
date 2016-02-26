@@ -1,0 +1,80 @@
+program.combined.1.bin length: 000da85c
+program.combined.2.bin length: 000da7de
+
+00000000: 00ff f200    Stack Pointer 0xfff200
+00000004: 0000 0104    Program Counter 0x104
+
+00000104: write 0xafff to 0xf2 (MC68302 IMP Configuration Base Address)
+          Base Address: 0xfff000, starting address of Dual-port RAM
+          CFC: 0 -> FC bits are ignored
+0000010a: write 0x0    to 0xf5 (MC68302 IMP Configuration System Control)
+          ERRE:0, VGE:0, WPVE:0, RMCST:0, EMWS:0, ADCE:0, BCLM:0
+          
+00000110: write 0x3e00 to 0xfff836 (OR1)
+          MRW: 0 -> masked
+          Base Address Mask: 0xf00000
+          DTACK: 1 -> 1 wait state
+00000118: write 0x401  to 0xfff834 (BR1) Set new RAM base address
+          EN: 1 -> /CS1 is enabled
+          Base Address: 0x200000
+00000120: write 0x3e02 to 0xfff832 (OR0)
+          MRW: 1 -> not masked (->read-only)
+          Base Address Mask: 0xf00000
+          DTACK: 1 -> 1 wait state
+
+00000128-
+00000138: write 0x00400100 to 0x200000, repeat 256 times (writes 1kB)
+
+0000013c-
+0000014e: write 00000158-00000175 to User Data memory at 0xfff000
+
+00000158: write 0x0001  to 0xfff834 (BR1) Set new RAM base address
+          EN: 1 -> /CS1 is enabled
+          Base Address: 0x0
+00000160: write 0x3c00 to 0xfff836 (OR1)
+          MRW: 0 -> masked
+          Base Address Mask: 0xe00000
+          DTACK: 1 -> 1 wait state
+00000168: write 0x0801  to 0xfff830 (BR0) Set new ROM base address
+          EN: 1 -> /CS0 is enabled
+          Base Address: 0x400000
+00000170: jump to ROM+0x176
+00000176: set %d1 to 0
+00000178: branch to PC+46 (ROM+0x1c0)
+.
+.
+.
+000001c0: write 0x1800 to 0xfff832 (OR0)
+          MRW: 0-> masked
+          Base Address Mask: 0xc00000
+          DTACK: 0 -> no wait state
+000001c8: write 0x0801  to 0xfff830 (BR0) Set new ROM base address
+          EN: 1 -> /CS0 is enabled
+          Base Address: 0x400000
+000001d0: write 0x1c00 to 0xfff836 (OR1)
+          MRW: 0 -> masked
+          Base Address Mask: 0xe00000
+          DTACK: 0 -> no wait state
+000001d8: write 0x0001  to 0xfff834 (BR1) Set new RAM base address
+          EN: 1 -> /CS1 is enabled
+          Base Address: 0x0
+000001e0: set CCR to 1 if %d1 == 0
+000001e2: branch to PC+5 (ROM+1ea) if CCR == 0
+000001e4: clear 0x432 (RAM)
+
+000001ea: write 0x9f00 to 0xfff83a (OR2)
+          MRW: 0 -> masked
+          Base Address Mask: 0xf80000
+          DTACK: 100 -> 4 wait states
+000001f2: write 0x0601 to 0xfff838 (BR2)
+          EN: 1 -> /CS2 is enabled
+          Base Address: 0x300000
+000001fa: write 0xff80 to 0xfff83e (OR3)
+          MRW: 0 -> masked
+          Base Address Mask: 0xfc0000
+          DTACK: 111 -> external DTACK   !!!!!!!!
+00000202: write 0x0701 to 0xfff83c (BR3)
+          EN: 1 -> /CS3 is enabled
+          Base Address: 0x380000
+
+0000020a: write 0x8740 to 0xfff812 (GIMR)
