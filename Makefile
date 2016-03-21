@@ -1,4 +1,4 @@
-TARGET           = S3Sim
+TARGET           = s3sim
 
 CPPFLAGS  = -Wall -pedantic -g -I. -I$(BUILDDIR) -I$(MUSASHIDIR)
 

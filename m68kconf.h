@@ -171,7 +171,7 @@
 
 #endif /* M68K_COMPILE_FOR_MAME */
 
-#include "S3Sim.h"
+#include "s3sim.h"
 
 #define m68k_read_memory_8(A) cpu_read_byte(A)
 #define m68k_read_memory_16(A) cpu_read_word(A)

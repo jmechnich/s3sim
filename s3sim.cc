@@ -4,7 +4,7 @@
 #include <time.h>
 #include <signal.h>
 #include <string.h>
-#include "S3Sim.h"
+#include "s3sim.h"
 
 extern "C"
 {
