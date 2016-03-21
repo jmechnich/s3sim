@@ -1,0 +1,35 @@
+name                    remarks
+program.eprom.1.bin     550.317 (S3 Turbo)
+program.eprom.2.bin     550.318 (S3 Turbo)
+program.eprom.3.bin     550.319 (S3 Turbo)
+program.eprom.4.bin     550.320 (S3 Turbo)
+sounds.rom.1.bin        IC29 - Drums
+sounds.rom.2.bin        IC43 - Piano
+sounds.rom.3.bin        IC74 - Brass/Strings
+
+simple checksum
+3e1d  program.eprom.1.bin
+6968  program.eprom.2.bin
+741c  program.eprom.3.bin
+01d3  program.eprom.4.bin
+6952  sounds.rom.1.bin
+344d  sounds.rom.2.bin
+0c6e  sounds.rom.3.bin
+
+MD5
+8057a5459adcd5871594a200033de626  program.eprom.1.bin
+81b2c3f45013740be2ec2ed6c67b64db  program.eprom.2.bin
+2d3b312c6c7a830d5cb35ffd13a38d3c  program.eprom.3.bin
+3828322e947b50a67bd5f0c0718379d4  program.eprom.4.bin
+1b47394963eb7ec04c1542e72f85e93e  sounds.rom.1.bin
+003cef21f10b01a84545bc90504235e5  sounds.rom.2.bin
+7cede8acffb91dd0d38babd63bf6b560  sounds.rom.3.bin
+
+SHA1
+c7cc6534a04acbff71bcbc3e561e4a6178b801c9  program.eprom.1.bin
+2bb550c867517a92d881411cb5a6343e458e715e  program.eprom.2.bin
+63b1775d3f58c7317bd3c0fc13d12b93215f009e  program.eprom.3.bin
+386e0c3f174aa706f69f665c1132d54454182ce5  program.eprom.4.bin
+175f539dccd3278c26f536c65560f9ead0b4000b  sounds.rom.1.bin
+d490326c2dc59bddfd202fbb2723eaf203defd8d  sounds.rom.2.bin
+3c1ef3423072b48135b3af68710147ed2a718415  sounds.rom.3.bin
